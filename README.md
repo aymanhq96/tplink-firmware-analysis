@@ -49,3 +49,15 @@ sudo unsquashfs rootfs.sqfs
 
 <img width="488" height="119" alt="image" src="https://github.com/user-attachments/assets/b422a521-4cbf-4d7d-bad4-996ea160dced" />
 
+<img width="534" height="345" alt="image" src="https://github.com/user-attachments/assets/8d77b916-6164-4426-9d22-fad3dd94cb04" />
+
+lo que nos interesa es acceder al directorio squashfs-root/etc para ver si hay información de usuarios o contraseñas
+
+<img width="677" height="254" alt="image" src="https://github.com/user-attachments/assets/0b5dc2bf-2bae-450e-a71c-ea3a9cb64f5f" />
+
+En la imagen de arriba observamos que hemos conseguido llegar a un archivo crítico donde se encuentra el usuario y las contraseñas. Aqui hay varias cosas a analizar.
+1) En la primera columna nos encontramos con $1$ eso quiere decir que el algoritmo utilizado es MD5, el cual se considera obsleto
+2) Tanto el root como el admin comparten clave maestra (tienen la misma cadena hash) lo cual es crítico
+
+<img width="765" height="188" alt="image" src="https://github.com/user-attachments/assets/921c6aa6-7367-4e07-8f80-cc0d0a98dc35" />
+
